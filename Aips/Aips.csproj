@@ -220,7 +220,6 @@
     <Content Include="Views\StudentsOffice\AssignSubjectToProfessor.cshtml" />
     <Content Include="Views\StudentsOffice\CheckScheduledLectures.cshtml" />
     <Content Include="Views\StudentsOffice\_CoursesForFaculty.cshtml" />
-    <Content Include="Views\StudentsOffice\RescheduleLecture.cshtml" />
     <Content Include="Views\StudentsOffice\_Timetable.cshtml" />
     <Content Include="Views\StudentsOffice\CheckAssignedSubjects.cshtml" />
     <Content Include="Views\Error\Information.cshtml" />
