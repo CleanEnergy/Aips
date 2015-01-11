@@ -1,0 +1,25 @@
+﻿@model EntityClasses.LockAccountViewModel
+
+<table>
+    <thead>
+        <tr>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.UserCollection)
+        {
+            <tr>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@Html.ActionLink("Details", "AccountDetails", new { id = user.Id })</td>
+            </tr>
+        }
+    </tbody>
+</table>  

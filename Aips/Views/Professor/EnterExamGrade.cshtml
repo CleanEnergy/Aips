@@ -1,0 +1,72 @@
+﻿@model EntityClasses.EnterExamGradeViewModel
+
+@{
+    ViewBag.Title = "EnterExamGrade";
+}
+
+<h2>Enter exam grade</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.ExamId)
+    @Html.HiddenFor(model => model.StudentId)
+        
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Student</label>
+            <div class="col-md-10">
+                <dl>
+                    <dt>Last name</dt>
+                    <dd>@Model.Student.LastName</dd>
+                    <dt>First name</dt>
+                    <dd>@Model.Student.FirstName</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Exam</label>
+            <div class="col-md-10">
+                <dl>
+                    <dt>Subject</dt>
+                    <dd>@Model.Exam.Subject.Title</dd>
+                    <dt>Date</dt>
+                    <dd>@Model.Exam.DateAndTime.ToShortDateString()</dd>
+                    <dt>Time</dt>
+                    <dd>@Model.Exam.DateAndTime.ToShortTimeString()</dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.InformStudent, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.CheckBoxFor(model => model.InformStudent, new { style = "margin-top:15px;" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-push-2 col-md-10">
+                <a href="/Professor/ViewExamCopy?examId=@Model.ExamId&studentId=@Model.StudentId" class="btn btn-info">View copy</a>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Grade, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Grade, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Grade, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Enter grade" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

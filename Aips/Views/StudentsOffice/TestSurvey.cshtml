@@ -1,0 +1,56 @@
+﻿@model EntityClasses.TestSurveyViewModel
+@{
+    ViewBag.Title = "TestSurvey";
+}
+
+<style>
+    .questionWrapper{
+        border:1px solid silver;
+        margin-bottom:5px;
+        padding:10px;
+    }
+</style>
+
+<h2>Test survey</h2>
+
+<h3>@Model.Survey.Title</h3>
+
+@for (int i = 0; i < Model.SurveyQuestions.Count; i++)
+{
+    
+    var question = Model.SurveyQuestions[i];
+    
+    <div class="questionWrapper">
+         
+        <h4>@question.Question</h4>
+        @{
+            var answers = Model.SurveyAnswers.Where(x => x.SurveyQuestionId == Model.SurveyQuestions[i].SurveyQuestionId).ToList();
+        }
+        @if (question.SurveyQuestionType.Name == "Multiple")
+	    {
+            for (int j = 0; j < answers.Count; j++)
+            {
+                var answer = answers[j];
+                <label for="@answer.SurveyAnswerId">@answer.Answer</label>
+                <input type="checkbox" name="@answer.SurveyQuestionId" value="@answer.SurveyAnswerId" id="@answer.SurveyAnswerId" />
+                <br />
+            }
+        }
+        else if (question.SurveyQuestionType.Name == "Single")
+        {
+            for (int j = 0; j < answers.Count; j++)
+            {
+                var answer = answers[j];
+                <label for="@answer.SurveyAnswerId">@answer.Answer</label>
+                <input type="radio" name="@answer.SurveyQuestionId" value="@answer.SurveyAnswerId" id="@answer.SurveyAnswerId" />
+                <br />
+            }
+        }
+        else if (question.SurveyQuestionType.Name == "Text")
+	    {
+		    <textarea name="@question.SurveyQuestionId"></textarea>
+	    }
+    </div>
+}
+
+@Html.ActionLink("To dashboard", "Index", new { })

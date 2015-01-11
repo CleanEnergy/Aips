@@ -1,0 +1,51 @@
+﻿@model EntityClasses.ExamViewModel
+
+@{
+    ViewBag.Title = "ViewExamDetails";
+
+    string gradeColor = Model.Grade < 6 ? "text-danger" : 
+                        Model.Grade < 8 ? "text-warning":
+                        "text-success";
+}
+
+<h2>Exam details</h2>
+
+<div>
+    <hr />
+
+    <table class="table table-responsive table-striped table-hover">
+        
+        <tr>
+            <th>
+                Subject
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                Grade
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Model.SubjectName
+            </td>
+            <td>
+                @Model.ExamDateAndTime.ToShortDateString()
+            </td>
+            <td>
+                @Model.ExamDateAndTime.ToShortTimeString()
+            </td>
+            <td class="@gradeColor">
+                @Model.Grade
+            </td>
+        </tr>
+    </table>
+
+    <div>
+        @Html.ActionLink("View copy", "OpenExamCopy", new { examId = Model.ExamId }, new { @class = "btn btn-info" })
+    </div>
+</div>

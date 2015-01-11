@@ -1,0 +1,21 @@
+﻿@model EntityClasses.SubjectViewModel
+@{
+    List<EntityClasses.Course> courses = ViewBag.Courses;
+    List<EntityClasses.User> professors = ViewBag.Professors;
+    var professorDisplay = professors.OrderBy(x => x.LastName).Select(x => new { Value = x.Id, Display = x.LastName + " " + x.FirstName });
+}
+
+<div class="form-group">
+    <label class="col-md-2 control-label">Select a course</label>
+    <div class="col-md-10">
+        @Html.DropDownListFor(m => m.CourseId, new SelectList(courses, "CourseId", "Name"))
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-md-2 control-label">Select a professor</label>
+    <div class="col-md-10">
+        @Html.DropDownListFor(m => m.ProfessorId, new SelectList(professorDisplay, "Value", "Display"))
+    </div>
+</div>
+

@@ -1,0 +1,45 @@
+﻿@model EntityClasses.GradeExamViewModel
+@{
+    ViewBag.Title = "GradeExam";
+    List<EntityClasses.ExamStudent> alreadyGraded = ViewBag.AlreadyGraded;
+}
+
+<h2>Grade exam - @Model.Exam.Subject.Title (@Model.Exam.DateAndTime)</h2>
+
+<table class="table table-responsive table-striped table-hover">
+    <tr>
+        <th>
+            Last name
+        </th>
+        <th>
+            First name
+        </th>
+        <th>
+            Grade
+        </th>
+        <th></th>
+    </tr>
+    @foreach (EntityClasses.SignOnExam signOn in Model.SignedOnStudents)
+    {
+        EntityClasses.ExamStudent existingGrade = alreadyGraded.FirstOrDefault(x => x.StudentId == signOn.StudentId);
+        string grade = existingGrade != null ? existingGrade.Grade.ToString() : signOn.IsSignedOff ? "Signed off" : "/";
+        <tr>
+            <td>
+                @signOn.Student.LastName
+            </td>
+            <td>
+                @signOn.Student.FirstName
+            </td>
+            <td>
+                @grade
+            </td>
+            <td>
+                @if (!signOn.IsSignedOff)
+                {
+
+                    @Html.ActionLink("Enter grade", "EnterExamGrade", new { examId = Model.ExamId, studentId = signOn.StudentId })
+                }
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+        table tr td, th {
+            border: 1px solid silver;
+            padding: 5px;
+        }
+</style>
+
+<table>
+    <tr>
+        <th>Exams</th>
+        <td>
+            @Html.ActionLink("All exams", "AllExams")
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,10 @@
+﻿<table>
+    @foreach (var message in ViewBag.AdminMessages)
+    {
+        <tr>
+            <td>@message.PostedOn</td>
+            <td>@message.Title</td>
+            <td>@message.Content</td>
+        </tr>
+    }
+</table>

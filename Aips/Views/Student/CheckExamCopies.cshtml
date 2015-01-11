@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "CheckExamCopies";
+    List<EntityClasses.ExamCopy> copies = ViewBag.Copies;
+}
+
+<h2>Exam copies</h2>
+
+<table class="table table-hover table-responsive table-striped">
+    <tr>
+        <th>Subject</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th></th>
+    </tr>
+    @foreach (EntityClasses.ExamCopy copy in copies)
+    {
+        <tr>
+            <td>@copy.Exam.Subject.Title</td>
+            <td>@copy.Exam.DateAndTime.ToShortDateString()</td>
+            <td>@copy.Exam.DateAndTime.ToShortTimeString()</td>
+            <td>
+                <a href="/Student/OpenExamCopy?examId=@copy.ExamId"><span class="glyphicon glyphicon-download"></span></a>
+            </td>
+        </tr>
+    }
+</table>

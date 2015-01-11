@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "ViewAllExamGrades";
+    List<EntityClasses.ExamStudent> exams = ViewBag.Exams; 
+}
+
+<h2>Exam grades</h2>
+
+<table class="table table-responsive table-hover table-striped">
+    <tr>
+        <th>Title</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Grade</th>
+        <th></th>
+    </tr>
+    @foreach (EntityClasses.ExamStudent exam in exams)
+    {
+        string rowClass = exam.Grade < 6 ? "danger" : exam.Grade < 8 ? "info" : "success";
+        <tr class="@rowClass">
+            <td>
+                @exam.Exam.Subject.Title
+            </td>
+            <td>
+                @exam.Exam.DateAndTime.ToShortDateString()
+            </td>
+            <td>
+                @exam.Exam.DateAndTime.ToShortTimeString()
+            </td>
+            <td>
+                @exam.Grade
+            </td>
+            <td>
+                @Html.ActionLink("Details", "ViewExamDetails", new { examId = exam.ExamId })
+            </td>
+        </tr>
+    }
+</table>

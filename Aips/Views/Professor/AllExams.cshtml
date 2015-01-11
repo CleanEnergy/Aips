@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EntityClasses.Exam>
+
+@{
+    ViewBag.Title = "AllExams";
+}
+
+<h2>All exams</h2>
+
+<table class="table table-responsive table-striped table-hover">
+    <tr>
+        <th>
+            Subject
+        </th>
+        <th>
+            Date
+        </th>
+        <th>
+            Time
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Subject.Title
+            </td>
+            <td>
+                @item.DateAndTime.ToShortDateString()
+            </td>
+            <td>
+                @item.DateAndTime.ToShortTimeString()
+        </td>
+        <td>
+            @Html.ActionLink("Grade", "GradeExam", new { examId = item.ExamId }) |
+            @Html.ActionLink("Details", "ExamDetails", new { examId = item.ExamId })
+        </td>
+    </tr>
+    }
+
+</table>

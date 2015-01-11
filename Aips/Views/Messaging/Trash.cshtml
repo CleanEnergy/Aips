@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Trash";
+}
+
+@Html.Partial("_MessagingNavigation")
+<h2>@ViewBag.Title</h2>
+
+<table class="table table-hover table-responsive table-striped">
+    <thead>
+        <tr>
+            <th>From</th>
+            <th>Received</th>
+            <th>Subject</th>
+            <th></th>
+        </tr>
+    </thead>
+    @foreach (EntityClasses.UserMessage message in ViewBag.Messages)
+    {
+        <tr>
+            <td>@message.SenderUsername</td>
+            <td>@message.SentOn</td>
+            <td>@message.Subject</td>
+            <td>
+                @Html.ActionLink("Read", "ReadMessage", new { id = message.UserMessageId }) |
+                @Html.ActionLink("Delete", "DeleteMessage", new { id = message.UserMessageId })
+            </td>
+        </tr>
+    }
+</table>

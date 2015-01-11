@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "StoreExamPDFUpload";
+    List<EntityClasses.SignOnExam> signedOnStudents = ViewBag.SignedOnStudents;
+    List<EntityClasses.ExamCopy> copies = ViewBag.Copies;
+}
+
+<h2>Student selection</h2>
+
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>Last name</th>
+        <th>First name</th>
+        <th>Username</th>
+        <th></th>
+    </tr>
+
+    @foreach (EntityClasses.SignOnExam student in signedOnStudents)
+    {
+        string rowClass = copies.Any(x => x.StudentId == student.StudentId) ? "success" : "";
+        <tr class="@rowClass">
+            <td>@student.Student.LastName</td>
+            <td>@student.Student.FirstName</td>
+            <td>@student.Student.UserName</td>
+            <td>
+                @if (student.IsSignedOff)
+                {
+                    <span>Signed off</span>
+                }
+                else
+                { 
+                    <a href="/StudentsOffice/StoreExamPDFUpload?examId=@student.ExamId&studentId=@student.StudentId"><span class="glyphicon glyphicon-upload"></span></a>
+                }
+            </td>
+        </tr>
+    }
+
+</table>

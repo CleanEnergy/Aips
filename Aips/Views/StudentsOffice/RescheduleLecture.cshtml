@@ -1,0 +1,59 @@
+﻿@model EntityClasses.ScheduleLecturesViewModel
+
+@{
+    ViewBag.Title = "RescheduleLecture";
+}
+
+<h2>RescheduleLecture for @ViewBag.SubjectTitle</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model => model.SelectedIntervalId)
+    @Html.HiddenFor(model => model.SelectedClassroomId)
+    @Html.HiddenFor(model => model.SubjectId)
+
+    <div class="form-horizontal">
+        <h4>ScheduleLecturesViewModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Required hours:</label>
+            <div class="col-md-10">
+                <input type="number" value="2" id="requiredHours" />
+            </div>
+        </div>
+
+        <input type="button" value="Show timetable" onclick="showTimetable()" />
+
+        <div id="timetable">
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<script>
+
+    function showTimetable() {
+        var subjectId = $('#SubjectId').val();
+        var hours = $('#requiredHours').val();
+
+        $.ajax({
+            url: '/StudentsOffice/GetFreeProfessorAndClassTime',
+            method: 'get',
+            data: { subjectId: subjectId, hours: hours },
+            success: function (e) {
+                $('#timetable').html(e);
+            },
+            error: function (e) {
+                alert('An error ocured retrieving the data.');
+            }
+        });
+    }
+</script>

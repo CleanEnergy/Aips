@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "CheckAllExamSignOns";
+    List<EntityClasses.SignOnExam> signOns = ViewBag.SignOns;
+}
+
+<h2>All exam sign-ons</h2>
+
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>Subject</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Classroom</th>
+    </tr>
+    @foreach (EntityClasses.SignOnExam signOn in signOns)
+    {
+        <tr>
+            <td>@signOn.Exam.Subject.Title</td>
+            <td>@signOn.Exam.DateAndTime.ToShortDateString()</td>
+            <td>@signOn.Exam.DateAndTime.ToShortTimeString()</td>
+            <td>@signOn.Exam.Classroom.Name</td>
+        </tr>
+    }
+</table>

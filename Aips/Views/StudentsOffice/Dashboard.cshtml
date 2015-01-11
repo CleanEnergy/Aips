@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+
+<div class="row col-md-12">
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Schedules</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("New schedule", "NewSchedule", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("Check existing schedules", "CheckSchedules", null, new { @class = "list-group-item list-group-item-warning" })
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Exams</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Schedule exam", "ScheduleExam", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("Check scheduled exams", "CheckScheduledExams", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("Store exam PDF", "StoreExamPDF", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("Check uploaded exams", "CheckUploadedExams", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Professors</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Assign subject to professor", "AssignSubjectToProfessor", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("Check assigned subjects", "CheckAssignedSubjects", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Assistants</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Assign subject to assistant", "AssignSubjectToAssistant", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row col-md-12">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Events</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Publish event", "PublishEvent", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">School years</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Add school year", "AddSchoolYear", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("View all school years", "ViewAllSchoolYears", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Faculties</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Add a faculty", "AddFaculty", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("View all faculties", "CheckExistingFaculties", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Courses</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Add a course", "AddCourse", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("View all courses", "ViewAllCourses", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row col-md-12">
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Subjects</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Add a subject", "CreateSubject", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("View all subjects", "CheckExistingSubjects", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Students</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Add a student", "AddStudent", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Assistants</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Assign subject to assistant", "AssignSubjectToAssistant", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-heading">Surveys</div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    @Html.ActionLink("Create a survey", "CreateSurvey", null, new { @class = "list-group-item" })
+                    @Html.ActionLink("View all surveys", "CheckSurveys", null, new { @class = "list-group-item" })
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

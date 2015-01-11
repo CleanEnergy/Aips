@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "SignOnExam";
+    List<EntityClasses.Exam> exams = ViewBag.Exams;
+}
+
+<h2>Sign on exam</h2>
+
+<table class="table table-responsive table-striped table-hover">
+    <tr>
+        <th>Subject</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Classroom</th>
+        <th></th>
+    </tr>
+    @foreach (EntityClasses.Exam exam in exams)
+    {
+        <tr>
+            <td>@exam.Subject.Title</td>
+            <td>@exam.DateAndTime.ToShortDateString()</td>
+            <td>@exam.DateAndTime.ToShortTimeString()</td>
+            <td>@exam.Classroom.Name</td>
+            <td>@Html.ActionLink("Sign on", "PreExamSignOn", new { examId = exam.ExamId })</td>
+        </tr>
+    }
+</table>

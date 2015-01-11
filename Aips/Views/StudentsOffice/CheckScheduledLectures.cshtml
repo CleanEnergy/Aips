@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "CheckScheduledLectures";
+}
+
+<h2>CheckScheduledLectures</h2>
+
+<div class="form-group">
+
+    <label>Select the faculty:</label>
+    @Html.DropDownList("Faculties", (SelectList)ViewBag.Faculties, "-- Select a faculty --", new { onchange = "showCourses()" })
+
+</div>
+
+<div class="form-group" id="coursesWrapper">
+
+
+
+</div>
+
+<script>
+
+    function showCourses() {
+        var selectedFacultyId = $('#Faculties').val();
+
+        if (!selectedFacultyId == "") {
+            $('#coursesWrapper').load('/StudentsOffice/GetCoursesForFaculty?facultyId='+selectedFacultyId);
+        }
+    }
+
+</script>

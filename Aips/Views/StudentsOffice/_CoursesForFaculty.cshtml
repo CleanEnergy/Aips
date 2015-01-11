@@ -1,0 +1,23 @@
+﻿<div class="form-group">
+    <label class="control-label col-md-2">Select a course</label>
+    <div class="col-md-10">
+        @Html.DropDownList("Courses", (SelectList)ViewBag.Courses, "-- Select a course --")
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-2">Enter a year</label>
+    <div class="col-md-10">
+        <input type="number" value="1" min="1" max="4" id="yearTb" />
+    </div>
+</div>
+<div class="form-group">
+    <label class="control-label col-md-2">Enter a degree</label>
+    <div class="col-md-10">
+        <input type="number" value="1" min="1" max="2" id="degreeTb" />
+    </div>
+</div>
+<div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+        <input class="btn btn-default" type="button" value="Get subjects" onclick="showSubjects()" />
+    </div>
+</div>

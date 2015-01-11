@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EntityClasses.SignOnInformation>
+
+@{
+    ViewBag.Title = "ViewAllSignOnInformation";
+}
+
+<h2>All faculty sign-ons</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Faculty
+        </th>
+        <th>
+            Course
+        </th>
+        <th>
+            Year
+        </th>
+        <th>
+            Degree
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Course.Faculty.Name
+        </td>
+        <td>
+            @item.Course.Name
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Year)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Degree)
+        </td>
+    </tr>
+}
+
+</table>

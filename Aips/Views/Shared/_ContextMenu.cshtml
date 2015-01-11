@@ -1,0 +1,131 @@
+﻿@if (User.IsInRole("Student"))
+{
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Information<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("Sign on information", "ViewAllSignOnInformation", "Student")
+            </li>
+            <li>
+                @Html.ActionLink("Subjects", "ViewAllSubjects", "Student")
+            </li>
+        </ul>
+    </li>
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exams<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("Sign on exam", "SignOnExam", "Student")
+            </li>
+            <li>
+                @Html.ActionLink("Check open sign ons", "CheckOpenExamSignOns", "Student")
+            </li>
+            <li>
+                @Html.ActionLink("Check all exam sign ons", "CheckAllExamSignOns", "Student")
+            </li>
+            <li>
+                @Html.ActionLink("Check exam copies", "CheckExamCopies", "Student")
+            </li>
+            <li>
+                @Html.ActionLink("View exam grades", "ViewAllExamGrades", "Student")
+            </li>
+        </ul>
+    </li>
+}
+else if (User.IsInRole("StudentsOffice"))
+{
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Schedules<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("New schedule", "NewSchedule", "StudentsOffice")
+                @Html.ActionLink("Check existing schedules", "CheckSchedules", "StudentsOffice")
+            </li>
+        </ul>
+    </li>
+    
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exams<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("Schedule exam", "ScheduleExam", "StudentsOffice")
+                @Html.ActionLink("Check scheduled exams", "CheckScheduledExams", "StudentsOffice")
+                @Html.ActionLink("Store exam copy", "StoreExamPDF", "StudentsOffice")
+                @Html.ActionLink("Check uploaded exams", "CheckUploadedExams", "StudentsOffice")
+            </li>
+        </ul>
+    </li>
+    
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Professors<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("Assign subject", "AssignSubjectToProfessor", "StudentsOffice")
+                @Html.ActionLink("Check assigned subjects", "CheckAssignedSubjects", "StudentsOffice")
+            </li>
+        </ul>
+    </li>
+    
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assistants<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("Assign subject", "AssignSubjectToAssistant", "StudentsOffice")
+            </li>
+        </ul>
+    </li>
+    
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("Publish event", "PublishEvent", "StudentsOffice")
+            </li>
+        </ul>
+    </li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Infrastructure<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li>
+                    @Html.ActionLink("Add school year", "AddSchoolYear", "StudentsOffice")
+                    @Html.ActionLink("View all school years", "ViewAllSchoolYears", "StudentsOffice")
+                </li>
+                <li class="divider"></li>
+                <li>
+                    @Html.ActionLink("Add a faculty", "AddFaculty", "StudentsOffice")
+                    @Html.ActionLink("View all faculties", "CheckExistingFaculties", "StudentsOffice")
+                </li>
+                <li class="divider"></li>
+                <li>
+                    @Html.ActionLink("Add a course", "AddCourse", "StudentsOffice")
+                    @Html.ActionLink("View all courses", "ViewAllCourses", "StudentsOffice")
+                </li>
+                <li class="divider"></li>
+                <li>
+                    @Html.ActionLink("Add a subject", "CreateSubject", "StudentsOffice")
+                    @Html.ActionLink("View all subjects", "CheckExistingSubjects", "StudentsOffice")
+                </li>
+            </ul>
+        </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("Add a student", "AddStudent", "StudentsOffice")
+            </li>
+        </ul>
+    </li>
+    <li>@Html.ActionLink("More...", "Index", "StudentsOffice")</li>      
+}
+else if (User.IsInRole("Professor"))
+{
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exams<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("All exams", "AllExams", "Professor")
+            </li>
+        </ul>
+    </li>
+}

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EntityClasses.SchoolYearViewModel>
+
+@{
+    ViewBag.Title = "ViewAllSchoolYears";
+}
+
+<h2>ViewAllSchoolYears</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.YearStartDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearStartMonth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearStartYear)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearEndDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearEndMonth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YearEndYear)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearStartDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearStartMonth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearStartYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearEndDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearEndMonth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YearEndYear)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) 
+        </td>
+    </tr>
+}
+
+</table>

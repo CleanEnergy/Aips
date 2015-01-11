@@ -1,0 +1,56 @@
+﻿@model EntityClasses.SurveyViewModel
+
+@{
+    ViewBag.Title = "Create a survey";
+}
+<style>
+    input[type="text"]{
+        max-width:initial;
+    }
+</style>
+
+<script src="~/Scripts/Surveys.js"></script>
+<h2>Create a survey</h2>
+
+@using (Html.BeginForm("CreateSurvey", "StudentsOffice", FormMethod.Post, new { id = "surveyForm" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", id = "surveyTitle" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Visible, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Visible)
+                    @Html.ValidationMessageFor(model => model.Visible, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <hr />
+
+        <div id="questionsArea">
+        </div>
+
+        <div class="text-center">
+            <input class="btn btn-primary" type="button" value="Add question" onclick="addQuestion()" />
+        </div>
+
+        <div class="form-group" style="margin-top:5px;">
+            <div class="text-center">
+                <input type="button" value="Create" class="btn btn-default" onclick="submitSurvey()" />
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,48 @@
+﻿@model EntityClasses.ExamViewModel
+
+@{
+    ViewBag.Title = "SignOffExam";
+}
+
+<h2>SignOffExam</h2>
+
+<h3>Are you sure you want to sign off this of this exam?</h3>
+<div>
+    <h4>ExamViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassroomName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassroomName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExamDateAndTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExamDateAndTime)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sign off" class="btn btn-default" /> 
+        </div>
+    }
+</div>

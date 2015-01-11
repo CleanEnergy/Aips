@@ -1,0 +1,63 @@
+﻿@model EntityClasses.LockAccountViewModel
+
+@{
+    ViewBag.Title = "Accounts";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Search:</h3>
+<div class="form-horizontal">
+    <div class="form-group">
+        <label class="control-label col-md-2">First name:</label>
+        <input class="form-control" type="text" id="FirstName" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Last name:</label>
+        <input class="form-control" type="text" id="LastName" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Username:</label>
+        <input class="form-control" type="text" id="UserName" />
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-md-2">Email:</label>
+        <input class="form-control" type="text" id="Email" />
+    </div>
+
+    <input type="button" id="searchButton" value="Search" />
+
+</div>
+<div class="form-group">
+    <h3>Results:</h3>
+    <div id="searchResults">
+        @{ Html.RenderPartial("_AccountSearchResults", Model); }
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#searchButton").click(function () {
+
+            var firstName = $("#FirstName").val();
+            var lastName = $("#FirstName").val();
+            var username = $("#UserName").val();
+            var email = $("#Email").val();
+
+            $.ajax({
+                url: '/Administration/SearchAccounts',
+                method: 'get',
+                data: { firstName: firstName, lastName: lastName, userName: username, email: email },
+                success: function (e) {
+                    $("#searchResults").html(e);
+                },
+                error: function (e) {
+                    alert('An error ocured retrieving the data.');
+                }
+            });
+        });
+    });
+</script>

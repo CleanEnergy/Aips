@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "CheckUploadedExams";
+}
+
+<h2>CheckUploadedExams</h2>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Exam</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (EntityClasses.Exam exam in ViewBag.Exams)
+        {
+            <tr>
+                @{
+                    string display = exam.Subject.Title + " - " + exam.DateAndTime.ToShortDateString();
+                }
+                <td>@display</td>
+                <td>@Html.ActionLink("Check uploads", "CheckUploadedExamsPerExam", new { examId = exam.ExamId })</td>
+            </tr>
+        }
+    </tbody>
+
+
+</table>

@@ -1,0 +1,17 @@
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Authorization.dll.config
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Authorization.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Authorization.pdb
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\EntityFramework.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\EntityFramework.xml
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\obj\Debug\Authorization.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\obj\Debug\Authorization.pdb
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\obj\Debug\Authorization.csprojResolveAssemblyReference.cache
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Microsoft.Owin.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Owin.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Authorization\bin\Debug\Microsoft.Owin.xml

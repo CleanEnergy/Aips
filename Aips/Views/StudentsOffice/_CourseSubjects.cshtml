@@ -1,0 +1,57 @@
+﻿@{
+    List<EntityClasses.Subject> subjects = ViewBag.Subjects;
+}
+@if (subjects.Count != 0)
+{
+    <div class="form-group">
+        <label class="control-label col-md-2">Select a subject</label>
+        <div class="col-md-10">
+            <table class="table table-responsive">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (EntityClasses.Subject subject in subjects)
+                    {
+                        <tr>
+                            <td>@subject.Title</td>
+                            <td>
+                                <input type="radio" name="subject" value="@subject.SubjectId" onchange="setSelectedSubject(this)" />
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="timetable-section">
+        <div class="form-group">
+            <label class="control-label col-md-2">Required hours</label>
+            <div class="col-md-10">
+                <input type="number" value="2" min="1" id="requiredHours" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Lab / lecture</label>
+            <div class="col-md-10">
+                <select id="labOrLectureSelect" onchange="setLabOrLecture()">
+                    <option value="lecture">Lecture</option>
+                    <option value="lab">Lab</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input class="btn btn-default" type="button" value="Show timetable" onclick="showTimetable()" />
+            </div>
+        </div>
+        <div id="timetable"></div>
+    </div>
+}
+else
+{
+    <p>No subjects exist for this year and degree in this course.</p>
+}

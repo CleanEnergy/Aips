@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F924DAF2-FCB6-4BA9-972E-2E195695CB28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAL</RootNamespace>
+    <AssemblyName>DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.1.0\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseAccess.cs" />
+    <Compile Include="Migrations\201412190916240_IdentityFrame.cs" />
+    <Compile Include="Migrations\201412190916240_IdentityFrame.Designer.cs">
+      <DependentUpon>201412190916240_IdentityFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412201110390_Updated_User.cs" />
+    <Compile Include="Migrations\201412201110390_Updated_User.Designer.cs">
+      <DependentUpon>201412201110390_Updated_User.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412221623112_User_Messages.cs" />
+    <Compile Include="Migrations\201412221623112_User_Messages.Designer.cs">
+      <DependentUpon>201412221623112_User_Messages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412221630234_User_Messages -Force.cs" />
+    <Compile Include="Migrations\201412221630234_User_Messages -Force.Designer.cs">
+      <DependentUpon>201412221630234_User_Messages -Force.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412231240161_AdminMessages.cs" />
+    <Compile Include="Migrations\201412231240161_AdminMessages.Designer.cs">
+      <DependentUpon>201412231240161_AdminMessages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412241327472_ProfessorSupport.cs" />
+    <Compile Include="Migrations\201412241327472_ProfessorSupport.Designer.cs">
+      <DependentUpon>201412241327472_ProfessorSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412241336219_Surveys.cs" />
+    <Compile Include="Migrations\201412241336219_Surveys.Designer.cs">
+      <DependentUpon>201412241336219_Surveys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412241353337_FinishedSurveys.cs" />
+    <Compile Include="Migrations\201412241353337_FinishedSurveys.Designer.cs">
+      <DependentUpon>201412241353337_FinishedSurveys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412241414189_Labs.cs" />
+    <Compile Include="Migrations\201412241414189_Labs.Designer.cs">
+      <DependentUpon>201412241414189_Labs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412241506166_UpdateToUniversityEvents.cs" />
+    <Compile Include="Migrations\201412241506166_UpdateToUniversityEvents.Designer.cs">
+      <DependentUpon>201412241506166_UpdateToUniversityEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412261116148_ExamCopies.cs" />
+    <Compile Include="Migrations\201412261116148_ExamCopies.Designer.cs">
+      <DependentUpon>201412261116148_ExamCopies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412261501484_ExamCopyFileType.cs" />
+    <Compile Include="Migrations\201412261501484_ExamCopyFileType.Designer.cs">
+      <DependentUpon>201412261501484_ExamCopyFileType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412261504501_FileTypeToMimeType.cs" />
+    <Compile Include="Migrations\201412261504501_FileTypeToMimeType.Designer.cs">
+      <DependentUpon>201412261504501_FileTypeToMimeType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412262055065_SchoolYearInformation.cs" />
+    <Compile Include="Migrations\201412262055065_SchoolYearInformation.Designer.cs">
+      <DependentUpon>201412262055065_SchoolYearInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412262209198_FacultyToUser.cs" />
+    <Compile Include="Migrations\201412262209198_FacultyToUser.Designer.cs">
+      <DependentUpon>201412262209198_FacultyToUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412262211036_FacultyToUserReverse.cs" />
+    <Compile Include="Migrations\201412262211036_FacultyToUserReverse.Designer.cs">
+      <DependentUpon>201412262211036_FacultyToUserReverse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412271453112_SignOnInfoYearDegree.cs" />
+    <Compile Include="Migrations\201412271453112_SignOnInfoYearDegree.Designer.cs">
+      <DependentUpon>201412271453112_SignOnInfoYearDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412271454491_CourseYearDegree.cs" />
+    <Compile Include="Migrations\201412271454491_CourseYearDegree.Designer.cs">
+      <DependentUpon>201412271454491_CourseYearDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412271616450_SubjectsForCourses.cs" />
+    <Compile Include="Migrations\201412271616450_SubjectsForCourses.Designer.cs">
+      <DependentUpon>201412271616450_SubjectsForCourses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412282045290_CourseInSignOnInformation.cs" />
+    <Compile Include="Migrations\201412282045290_CourseInSignOnInformation.Designer.cs">
+      <DependentUpon>201412282045290_CourseInSignOnInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412282100290_CourseUpdate.cs" />
+    <Compile Include="Migrations\201412282100290_CourseUpdate.Designer.cs">
+      <DependentUpon>201412282100290_CourseUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412282139525_SurveyVisibility.cs" />
+    <Compile Include="Migrations\201412282139525_SurveyVisibility.Designer.cs">
+      <DependentUpon>201412282139525_SurveyVisibility.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412291918358_SurveyQuestionTypes.cs" />
+    <Compile Include="Migrations\201412291918358_SurveyQuestionTypes.Designer.cs">
+      <DependentUpon>201412291918358_SurveyQuestionTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412292051225_SurveyQuestionsTypeId.cs" />
+    <Compile Include="Migrations\201412292051225_SurveyQuestionsTypeId.Designer.cs">
+      <DependentUpon>201412292051225_SurveyQuestionsTypeId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412292304030_ProfessorsSubjects.cs" />
+    <Compile Include="Migrations\201412292304030_ProfessorsSubjects.Designer.cs">
+      <DependentUpon>201412292304030_ProfessorsSubjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412292345119_Lectures.cs" />
+    <Compile Include="Migrations\201412292345119_Lectures.Designer.cs">
+      <DependentUpon>201412292345119_Lectures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201412301426483_SubjectYearDegree.cs" />
+    <Compile Include="Migrations\201412301426483_SubjectYearDegree.Designer.cs">
+      <DependentUpon>201412301426483_SubjectYearDegree.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501011109189_CourseNameLength.cs" />
+    <Compile Include="Migrations\201501011109189_CourseNameLength.Designer.cs">
+      <DependentUpon>201501011109189_CourseNameLength.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501011705452_SchoolDay.cs" />
+    <Compile Include="Migrations\201501011705452_SchoolDay.Designer.cs">
+      <DependentUpon>201501011705452_SchoolDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501011935546_UpdateForLabs.cs" />
+    <Compile Include="Migrations\201501011935546_UpdateForLabs.Designer.cs">
+      <DependentUpon>201501011935546_UpdateForLabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501011942036_UpdateForLabsSchoolDay.cs" />
+    <Compile Include="Migrations\201501011942036_UpdateForLabsSchoolDay.Designer.cs">
+      <DependentUpon>201501011942036_UpdateForLabsSchoolDay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501021333328_TimetableSupportFrame.cs" />
+    <Compile Include="Migrations\201501021333328_TimetableSupportFrame.Designer.cs">
+      <DependentUpon>201501021333328_TimetableSupportFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501022049311_ScheduledClassroomKeyFix.cs" />
+    <Compile Include="Migrations\201501022049311_ScheduledClassroomKeyFix.Designer.cs">
+      <DependentUpon>201501022049311_ScheduledClassroomKeyFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501022050169_LecturesKeyFix.cs" />
+    <Compile Include="Migrations\201501022050169_LecturesKeyFix.Designer.cs">
+      <DependentUpon>201501022050169_LecturesKeyFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501032106206_ScheduleClassroomAddSubject.cs" />
+    <Compile Include="Migrations\201501032106206_ScheduleClassroomAddSubject.Designer.cs">
+      <DependentUpon>201501032106206_ScheduleClassroomAddSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501032249029_LabUpdate.cs" />
+    <Compile Include="Migrations\201501032249029_LabUpdate.Designer.cs">
+      <DependentUpon>201501032249029_LabUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501041706572_UpdateLectureLab.cs" />
+    <Compile Include="Migrations\201501041706572_UpdateLectureLab.Designer.cs">
+      <DependentUpon>201501041706572_UpdateLectureLab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501071830095_AssistantsSubjects.cs" />
+    <Compile Include="Migrations\201501071830095_AssistantsSubjects.Designer.cs">
+      <DependentUpon>201501071830095_AssistantsSubjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501072007429_ExamUpdate.cs" />
+    <Compile Include="Migrations\201501072007429_ExamUpdate.Designer.cs">
+      <DependentUpon>201501072007429_ExamUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501080855075_ExamSignOnsUpdate.cs" />
+    <Compile Include="Migrations\201501080855075_ExamSignOnsUpdate.Designer.cs">
+      <DependentUpon>201501080855075_ExamSignOnsUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501081014096_SignOnExamUpdate.cs" />
+    <Compile Include="Migrations\201501081014096_SignOnExamUpdate.Designer.cs">
+      <DependentUpon>201501081014096_SignOnExamUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501101120244_SignOnInformationFix.cs" />
+    <Compile Include="Migrations\201501101120244_SignOnInformationFix.Designer.cs">
+      <DependentUpon>201501101120244_SignOnInformationFix.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201412190916240_IdentityFrame.resx">
+      <DependentUpon>201412190916240_IdentityFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412201110390_Updated_User.resx">
+      <DependentUpon>201412201110390_Updated_User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412221623112_User_Messages.resx">
+      <DependentUpon>201412221623112_User_Messages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412221630234_User_Messages -Force.resx">
+      <DependentUpon>201412221630234_User_Messages -Force.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412231240161_AdminMessages.resx">
+      <DependentUpon>201412231240161_AdminMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412241327472_ProfessorSupport.resx">
+      <DependentUpon>201412241327472_ProfessorSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412241336219_Surveys.resx">
+      <DependentUpon>201412241336219_Surveys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412241353337_FinishedSurveys.resx">
+      <DependentUpon>201412241353337_FinishedSurveys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412241414189_Labs.resx">
+      <DependentUpon>201412241414189_Labs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412241506166_UpdateToUniversityEvents.resx">
+      <DependentUpon>201412241506166_UpdateToUniversityEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412261116148_ExamCopies.resx">
+      <DependentUpon>201412261116148_ExamCopies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412261501484_ExamCopyFileType.resx">
+      <DependentUpon>201412261501484_ExamCopyFileType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412261504501_FileTypeToMimeType.resx">
+      <DependentUpon>201412261504501_FileTypeToMimeType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412262055065_SchoolYearInformation.resx">
+      <DependentUpon>201412262055065_SchoolYearInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412262209198_FacultyToUser.resx">
+      <DependentUpon>201412262209198_FacultyToUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412262211036_FacultyToUserReverse.resx">
+      <DependentUpon>201412262211036_FacultyToUserReverse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412271453112_SignOnInfoYearDegree.resx">
+      <DependentUpon>201412271453112_SignOnInfoYearDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412271454491_CourseYearDegree.resx">
+      <DependentUpon>201412271454491_CourseYearDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412271616450_SubjectsForCourses.resx">
+      <DependentUpon>201412271616450_SubjectsForCourses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412282045290_CourseInSignOnInformation.resx">
+      <DependentUpon>201412282045290_CourseInSignOnInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412282100290_CourseUpdate.resx">
+      <DependentUpon>201412282100290_CourseUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412282139525_SurveyVisibility.resx">
+      <DependentUpon>201412282139525_SurveyVisibility.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412291918358_SurveyQuestionTypes.resx">
+      <DependentUpon>201412291918358_SurveyQuestionTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412292051225_SurveyQuestionsTypeId.resx">
+      <DependentUpon>201412292051225_SurveyQuestionsTypeId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412292304030_ProfessorsSubjects.resx">
+      <DependentUpon>201412292304030_ProfessorsSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412292345119_Lectures.resx">
+      <DependentUpon>201412292345119_Lectures.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201412301426483_SubjectYearDegree.resx">
+      <DependentUpon>201412301426483_SubjectYearDegree.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501011109189_CourseNameLength.resx">
+      <DependentUpon>201501011109189_CourseNameLength.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501011705452_SchoolDay.resx">
+      <DependentUpon>201501011705452_SchoolDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501011935546_UpdateForLabs.resx">
+      <DependentUpon>201501011935546_UpdateForLabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501011942036_UpdateForLabsSchoolDay.resx">
+      <DependentUpon>201501011942036_UpdateForLabsSchoolDay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501021333328_TimetableSupportFrame.resx">
+      <DependentUpon>201501021333328_TimetableSupportFrame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501022049311_ScheduledClassroomKeyFix.resx">
+      <DependentUpon>201501022049311_ScheduledClassroomKeyFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501022050169_LecturesKeyFix.resx">
+      <DependentUpon>201501022050169_LecturesKeyFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501032106206_ScheduleClassroomAddSubject.resx">
+      <DependentUpon>201501032106206_ScheduleClassroomAddSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501032249029_LabUpdate.resx">
+      <DependentUpon>201501032249029_LabUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501041706572_UpdateLectureLab.resx">
+      <DependentUpon>201501041706572_UpdateLectureLab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501071830095_AssistantsSubjects.resx">
+      <DependentUpon>201501071830095_AssistantsSubjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501072007429_ExamUpdate.resx">
+      <DependentUpon>201501072007429_ExamUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501080855075_ExamSignOnsUpdate.resx">
+      <DependentUpon>201501080855075_ExamSignOnsUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501081014096_SignOnExamUpdate.resx">
+      <DependentUpon>201501081014096_SignOnExamUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501101120244_SignOnInformationFix.resx">
+      <DependentUpon>201501101120244_SignOnInformationFix.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EntityClasses\EntityClasses.csproj">
+      <Project>{93d2c55b-a0bf-4e2a-ba1c-fe0a019c21cf}</Project>
+      <Name>EntityClasses</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

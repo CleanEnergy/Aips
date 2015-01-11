@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Web
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aips", "Aips\Aips.csproj", "{87EEAEF3-A98A-4F52-AECF-4468302F083D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{F924DAF2-FCB6-4BA9-972E-2E195695CB28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL", "BL\BL.csproj", "{0ACD51C6-9511-4204-B8C1-ADB412F785EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging", "Logging\Logging.csproj", "{1C032F59-530C-48A1-B81C-4B9EE89F5D12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityClasses", "EntityClasses\EntityClasses.csproj", "{93D2C55B-A0BF-4E2A-BA1C-FE0A019C21CF}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://reminder.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Aips\\Aips.csproj
+		SccProjectName1 = Aips
+		SccLocalPath1 = Aips
+		SccProjectUniqueName2 = DAL\\DAL.csproj
+		SccProjectName2 = DAL
+		SccLocalPath2 = DAL
+		SccProjectUniqueName3 = BL\\BL.csproj
+		SccProjectName3 = BL
+		SccLocalPath3 = BL
+		SccProjectUniqueName4 = Logging\\Logging.csproj
+		SccProjectName4 = Logging
+		SccLocalPath4 = Logging
+		SccProjectUniqueName5 = EntityClasses\\EntityClasses.csproj
+		SccProjectName5 = EntityClasses
+		SccLocalPath5 = EntityClasses
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{87EEAEF3-A98A-4F52-AECF-4468302F083D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87EEAEF3-A98A-4F52-AECF-4468302F083D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87EEAEF3-A98A-4F52-AECF-4468302F083D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87EEAEF3-A98A-4F52-AECF-4468302F083D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F924DAF2-FCB6-4BA9-972E-2E195695CB28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F924DAF2-FCB6-4BA9-972E-2E195695CB28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F924DAF2-FCB6-4BA9-972E-2E195695CB28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F924DAF2-FCB6-4BA9-972E-2E195695CB28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ACD51C6-9511-4204-B8C1-ADB412F785EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ACD51C6-9511-4204-B8C1-ADB412F785EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ACD51C6-9511-4204-B8C1-ADB412F785EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ACD51C6-9511-4204-B8C1-ADB412F785EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C032F59-530C-48A1-B81C-4B9EE89F5D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C032F59-530C-48A1-B81C-4B9EE89F5D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C032F59-530C-48A1-B81C-4B9EE89F5D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C032F59-530C-48A1-B81C-4B9EE89F5D12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D2C55B-A0BF-4E2A-BA1C-FE0A019C21CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D2C55B-A0BF-4E2A-BA1C-FE0A019C21CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D2C55B-A0BF-4E2A-BA1C-FE0A019C21CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D2C55B-A0BF-4E2A-BA1C-FE0A019C21CF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

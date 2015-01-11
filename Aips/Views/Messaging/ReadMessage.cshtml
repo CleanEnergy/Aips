@@ -1,0 +1,20 @@
+﻿@model EntityClasses.MessageViewModel
+
+@{
+    ViewBag.Title = "ReadMessage";
+}
+
+@Html.Partial("_MessagingNavigation")
+
+
+<div class="col-md-12">
+    <h2>@Model.Subject</h2>
+</div>
+
+<div class="col-md-12">
+    <h5>From @Model.SenderUsername (@Model.SentOn)</h5>
+</div>
+<div class="col-md-12">
+    <hr />
+    @Html.Raw(Model.Content)
+</div>

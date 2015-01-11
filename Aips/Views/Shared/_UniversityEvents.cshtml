@@ -1,0 +1,17 @@
+﻿<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date and time</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    @foreach (EntityClasses.UniversityEvent universityEvent in ViewBag.Events)
+    {
+        <tr>
+            <td>@universityEvent.Title</td>
+            <td>@universityEvent.DateAndTime</td>
+            <td>@universityEvent.Description</td>
+        </tr>
+    }
+</table>

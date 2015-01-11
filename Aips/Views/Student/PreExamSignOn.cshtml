@@ -1,0 +1,50 @@
+﻿@model EntityClasses.ExamViewModel
+
+@{
+    ViewBag.Title = "PreExamSignOn";
+}
+
+<h2>Confirm exam sign on</h2>
+
+<h3>Are you sure you want to sign on to this exam?</h3>
+<div>
+    <hr />
+    <table class="table table-responsive table-striped table-hover">
+        <tr>
+            <th>
+                Subject
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                Classroom
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Model.SubjectName
+            </td>
+            <td>
+                @Model.ExamDateAndTime.ToShortDateString()
+            </td>
+            <td>
+                @Model.ExamDateAndTime.ToShortTimeString()
+            </td>
+            <td>
+                @Model.ClassroomName
+            </td>
+        </tr>
+    </table>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Confirm" class="btn btn-default" />
+        </div>
+    }
+</div>

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<style>
+    table {
+        border-collapse: collapse;
+    }
+
+        table tr td, th {
+            border: 1px solid silver;
+            padding: 5px;
+        }
+</style>
+
+<table class="table table-responsive">
+    <tr>
+        <th>Information</th>
+        <td>
+            @Html.ActionLink("Sign on information", "ViewAllSignOnInformation")
+        </td>
+    </tr>
+    <tr>
+        <th>Exams</th>
+        <td>
+            @Html.ActionLink("Sign on exam", "SignOnExam")
+        </td>
+        <td>
+            @Html.ActionLink("Check open sign ons", "CheckOpenExamSignOns")
+        </td>
+        <td>
+            @Html.ActionLink("Check all exam sign ons", "CheckAllExamSignOns")
+        </td>
+        <td>
+            @Html.ActionLink("Check exam copies", "CheckExamCopies")
+        </td>
+        <td>
+            @Html.ActionLink("View exam grades", "ViewAllExamGrades")
+        </td>
+    </tr>
+</table>

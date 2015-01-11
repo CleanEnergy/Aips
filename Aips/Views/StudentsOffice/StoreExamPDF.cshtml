@@ -1,0 +1,36 @@
+﻿@model EntityClasses.ExamPDFUploadViewModel
+
+@{
+    ViewBag.Title = "StoreExamPDF";
+}
+<script src="~/Scripts/ExamCopies.js"></script>
+<h2>Save exam copy</h2>
+
+    @Html.AntiForgeryToken()
+    
+    @Html.HiddenFor(m => m.AuthorId)
+    @Html.HiddenFor(m => m.ExamId)
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <label class="control-label col-md-2">Faculty</label>
+            <div class="col-md-10">
+                @Html.DropDownList("Faculty", (SelectList)ViewBag.Faculties, "-- Select a faculty -- ", new { onchange = "getFacultyCourses()" })
+            </div>
+        </div>
+
+        <div id="facultyCourses">
+        </div>
+
+        <div id="courseSubjects">
+
+        </div>
+
+        <div id="examsForSubject" class="form-group">
+
+        </div>
+
+    </div>

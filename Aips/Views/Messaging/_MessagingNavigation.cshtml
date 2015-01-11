@@ -1,0 +1,10 @@
+﻿<div style="margin-top:10px;"></div>
+
+@Html.ActionLink("New message", "NewMessage", null, new { @class = "btn btn-success" }) <br />
+<div class="btn-group btn-group-justified">
+
+    @Html.ActionLink("Inbox", "Index", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Sent items", "SentItems", null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Trash", "Trash", null, new { @class = "btn btn-primary" })
+
+</div>

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "CheckUploadedExamsPerExam";
+}
+
+<h2>CheckUploadedExamsPerExam</h2>
+
+<table>
+
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (EntityClasses.ExamCopy examCopy in ViewBag.Copies)
+        {
+            <tr>
+                <td>
+                    @examCopy.StudentId
+                </td>
+                <td>@examCopy.Student.FirstName</td>
+                <td>@examCopy.Student.LastName</td>
+                <td>@examCopy.Student.Email</td>
+                <td>@Html.ActionLink("View copy...", "CheckUploadedExam", new { uploadId = examCopy.ExamCopyId })</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

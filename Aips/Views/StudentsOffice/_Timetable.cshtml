@@ -1,0 +1,33 @@
+﻿@model EntityClasses.ScheduleViewModel
+
+@Html.HiddenFor(model => model.SelectedIntervalId)
+@Html.HiddenFor(model => model.SelectedClassroomId)
+
+<h3>Timetable</h3>
+<table class="table table-hover table-condensed">
+
+    @foreach (EntityClasses.ScheduleIntervalViewModel interval in Model.Intervals)
+    {
+        <tr>
+            <td>@interval.IntervalStart.ToShortTimeString()</td>
+            <td>@interval.IntervalEnd.ToShortTimeString()</td>
+            <td>@interval.SchoolDay.Name</td>
+            <td>
+                <table class="@interval.Id">
+                    @foreach (EntityClasses.Classroom classroom in interval.Classrooms)
+                    {
+                        <tr>
+                            <td>
+                                @classroom.Name
+                            </td>
+                            <td>
+                                <input type="radio" name="selectedClassroom" value="@classroom.ClassroomId" onchange="setSelectedClassroom('@classroom.ClassroomId' , '@interval.Id')" />
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </td>
+        </tr>
+    }
+
+</table>
