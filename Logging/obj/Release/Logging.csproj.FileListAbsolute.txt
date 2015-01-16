@@ -1,0 +1,4 @@
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Logging\bin\Release\Logging.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Logging\bin\Release\Logging.pdb
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Logging\obj\Release\Logging.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Logging\obj\Release\Logging.pdb

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<EntityClasses.MarkLabPresenceViewModel>
+
+@{
+    ViewBag.Title = "MarkLabPresence";
+    EntityClasses.Lab lab = ViewBag.Lab;
+}
+<script src="~/Scripts/MarkLabPresence.js"></script>
+<h2>Mark lab presence - @lab.Subject.Title (@lab.ScheduledClassroom.SchoolDay.Name @lab.ScheduledClassroom.ScheduleStart.ToShortTimeString() - @lab.ScheduledClassroom.ScheduleEnd.ToShortTimeString())</h2>
+<h3>@DateTime.Today.ToShortDateString()</h3>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentFirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentLastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WasPresent)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentFirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentLastName)
+        </td>
+        <td>
+            @Html.CheckBoxFor(modelItem => item.WasPresent, new { onchange = "markPresence(this, '" + item.StudentId + "')" })
+        </td>
+    </tr>
+}
+</table>
+
+@using (Html.BeginForm("MarkLabPresence", "Assistant", null, FormMethod.Post, new { name = "idsForm" }))
+{
+    @Html.AntiForgeryToken()
+    <input type="hidden" name="ids" value="" id="presentIds"/>
+    <input type="button" value="Save" class="btn btn-default" onclick="savePresence()" />
+}

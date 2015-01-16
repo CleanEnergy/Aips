@@ -7,6 +7,33 @@ using System.Threading.Tasks;
 
 namespace EntityClasses
 {
+    public class LabPresenceForSubjectViewModel
+    {
+        [Display(Name = "Subject")]
+        public string SubjectName { get; set; }
+
+        [Display(Name = "Presence percent")]
+        public float PresencePercent { get; set; }
+
+        [Display(Name = "Required presence")]
+        public float RequiredPresencePercent { get; set; }
+    }
+
+    public class MarkLabPresenceViewModel
+    {
+        [Display(Name = "Student")]
+        public string StudentId { get; set; }
+
+        [Display(Name = "First name")]
+        public string StudentFirstName { get; set; }
+
+        [Display(Name = "Last name")]
+        public string StudentLastName { get; set; }
+
+        [Display(Name = "Was present")]
+        public bool WasPresent { get; set; }
+    }
+
     public class SignOnInformationViewModel
     {
         public SchoolYear SchoolYear { get; set; }
@@ -20,15 +47,19 @@ namespace EntityClasses
 
     public class EnterExamGradeViewModel
     {
+        [Display(Name = "Exam")]
         [Required]
         public int ExamId { get; set; }
 
+        [Display(Name = "Student")]
         [Required]
         public string StudentId { get; set; }
 
+        [Display(Name = "Grade")]
         [Required]
         public int Grade { get; set; }
 
+        [Display(Name = "Inform student")]
         [Required]
         public bool InformStudent { get; set; }
 
@@ -47,14 +78,19 @@ namespace EntityClasses
 
     public class AssignedSubjectViewModel
     {
+        [Display(Name = "Professor")]
         public string ProfessorId { get; set; }
 
+        [Display(Name = "Subject")]
         public int SubjectId { get; set; }
 
+        [Display(Name = "First name")]
         public string ProfessorFirstName { get; set; }
 
+        [Display(Name = "Last name")]
         public string ProfessorLastName { get; set; }
 
+        [Display(Name = "Subject")]
         public string SubjectTitle { get; set; }
     }
 
@@ -123,9 +159,12 @@ namespace EntityClasses
     public class LoginViewModel
     {
         [Required]
+        [Display(Name = "User name")]
         public string UserName { get; set; }
 
         [Required]
+        [Display(Name = "Password")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
     }
 
@@ -176,6 +215,8 @@ namespace EntityClasses
         [Required]
         public string RecepientUsernames { get; set; }
 
+        public bool Seen { get; set; }
+
         public DateTime SentOn { get; set; }
 
         public string RecepientUsername { get; set; }
@@ -211,38 +252,53 @@ namespace EntityClasses
         [Required(AllowEmptyStrings = false)]
         public string Description { get; set; }
 
+        [Display(Name = "Inform students")]
         public bool InformAllStudents { get; set; }
     }
 
     public class ExamViewModel
     {
+        [Display(Name = "Subject")]
         [Required]
         public int SubjectId { get; set; }
 
+        [Display(Name = "Day")]
         [Required]
         public int Day { get; set; }
 
+        [Display(Name = "Month")]
         [Required]
         public int Month { get; set; }
 
+        [Display(Name = "Year")]
         [Required]
         public int Year { get; set; }
 
+        [Display(Name = "Hour")]
         [Required]
         public int Hour { get; set; }
 
+        [Display(Name = "Minute")]
         [Required]
         public int Minute { get; set; }
 
+        [Display(Name = "Classroom")]
         [Required]
         public int ClassroomId { get; set; }
 
+        [Display(Name = "Student")]
         public string StudentId { get; set; }
+        [Display(Name = "Grade")]
         public int Grade { get; set; }
+        [Display(Name = "Classroom")]
         public string ClassroomName { get; set; }
+        [Display(Name = "Subject")]
         public string SubjectName { get; set; }
+        [Display(Name = "Inform students")]
         public bool InformStudents { get; set; }
+        [Display(Name = "Date and time")]
         public DateTime ExamDateAndTime { get; set; }
+        [Display(Name = "Exam")]
         public int ExamId { get; set; }
     }
 
@@ -280,33 +336,42 @@ namespace EntityClasses
 
     public class CreateStudentViewModel
     {
+        [Display(Name = "First name")]
         [Required]
         [StringLength(50)]
         public string FirstName { get; set; }
 
+        [Display(Name = "Last name")]
         [Required]
         [StringLength(50)]
         public string LastName { get; set; }
 
+        [Display(Name = "Email address")]
         [Required]
         [StringLength(256)]
         public string EMail { get; set; }
 
+        [Display(Name = "Phone number")]
         public string PhoneNumber { get; set; }
 
+        [Display(Name = "Username")]
         [Required]
         [StringLength(30)]
         public string UserName { get; set; }
 
+        [Display(Name = "Password")]
         [Required]
         public string Password { get; set; }
 
+        [Display(Name = "Repeat password")]
         [Compare("Password")]
         public string RepeatPassword { get; set; }
 
+        [Display(Name = "Course")]
         [Required]
         public int CourseId { get; set; }
 
+        [Display(Name = "School year")]
         [Required]
         public int SchoolYearId { get; set; }
     }
@@ -387,24 +452,46 @@ namespace EntityClasses
 
     public class LabViewModel
     {
+        [Display(Name = "Lab")]
         public int LabId { get; set; }
 
+        [Display(Name = "Subject")]
         [Required]
         public int SubjectId { get; set; }
 
+        [Display(Name = "Start hour")]
         [Required]
         public int StartTimeHour { get; set; }
 
+        [Display(Name = "Start minute")]
         [Required]
         public int StartTimeMinute { get; set; }
 
+        [Display(Name = "End hour")]
         [Required]
         public int EndTimeHour { get; set; }
 
+        [Display(Name = "End minute")]
         [Required]
         public int EndTimeMinute { get; set; }
 
+        [Display(Name = "Minimal presence percent")]
         [Required]
         public int MinimalPresencePercent { get; set; }
+
+        [Display(Name = "Assistant")]
+        [Required]
+        public string AssistantId  { get; set; }
+
+        [Display(Name = "School day")]
+        public SchoolDay SchoolDay { get; set; }
+        [Display(Name = "Start time")]
+        public DateTime StartTime { get; set; }
+        [Display(Name = "End time")]
+        public DateTime EndTime { get; set; }
+        [Display(Name = "Subject")]
+        public Subject Subject { get; set; }
+        [Display(Name = "Assistant")]
+        public User Assistant { get; set; }
     }
 }

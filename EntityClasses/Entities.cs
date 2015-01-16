@@ -9,6 +9,45 @@ using System.Threading.Tasks;
 
 namespace EntityClasses
 {
+    public class ScheduledLab
+    {
+        [Key]
+        public int ScheduledLabId { get; set; }
+
+        [Column]
+        [Required]
+        [ForeignKey("Lab")]
+        public int LabId { get; set; }
+
+        [Column]
+        [Required]
+        public DateTime Date { get; set; }
+
+        public virtual Lab Lab { get; set; }
+    }
+    
+    public class StudentsLabs
+    {
+        [Key]
+        [Required]
+        [Column(Order = 0)]
+        [ForeignKey("ScheduledLab")]
+        public int ScheduledLabId { get; set; }
+
+        [Key]
+        [Required]
+        [Column(Order = 1)]
+        [ForeignKey("Student")]
+        public string StudentId { get; set; }
+
+        [Column]
+        [Required]
+        public bool WasPresent { get; set; }
+
+        public virtual ScheduledLab ScheduledLab { get; set; }
+        public virtual User Student { get; set; }
+    }
+
     public class User : IdentityUser
     {
         [Required]
@@ -80,6 +119,9 @@ namespace EntityClasses
 
         [Column]
         public bool IsTrash { get; set; }
+
+        [Column]
+        public bool Seen { get; set; }
     }
 
     public class AdminMessage
@@ -432,8 +474,6 @@ namespace EntityClasses
         public virtual Survey Survey { get; set; }
     }
 
-    
-
     public class ExamCopy
     {
         [Key]
@@ -552,6 +592,7 @@ namespace EntityClasses
         public virtual User Assistant { get; set; }
         public virtual ScheduledClassroom ScheduledClassroom { get; set; }
         public virtual Subject Subject { get; set; }
+
     }
 
     public class SchoolDay

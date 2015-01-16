@@ -554,7 +554,7 @@ namespace BL
             return context.Courses.Single(x => x.CourseId == courseId);
         }
 
-        public Task<List<Subject>> GetAllSubjectsForStudent(string studentId)
+        /*public Task<List<Subject>> GetAllSubjectsForStudent(string studentId)
         {
             List<SignOnInformation> signOnInfo = context.SignOnInformation.Where(x => x.StudentId == studentId).ToList();
 
@@ -566,17 +566,22 @@ namespace BL
             }
 
             return Task.FromResult<List<Subject>>(subjects);
-        }
+        }*/
 
 
         public float? GetGradeForStudent(int subjectId, string studentId)
         {
-            /*List<ExamStudent> allExams = context.ExamStudent.Where(x => x.Exam.SubjectId == subjectId && x.StudentId == studentId).ToList();
+            List<ExamStudent> allExams = context.ExamStudent.Where(x => x.Exam.SubjectId == subjectId && x.StudentId == studentId).ToList();
 
+            int gradeSum = allExams.Sum(x => x.Grade);
 
+            if (gradeSum == 0)
+            {
+                return null;
+            }
 
-            return allExams.Where(x => x.Grade == allExams.Max(y => y.Grade)).FirstOrDefault();*/
-            return null;
+            float average = gradeSum / allExams.Count;
+            return average;
         }
 
         public Task<List<SignOnExam>> GetStudentsSignedOffExam(int examId)
@@ -584,6 +589,80 @@ namespace BL
             List<SignOnExam> signedOff = context.ExamSignOns.Where(x => x.ExamId == examId && x.IsSignedOff).ToList();
 
             return Task.FromResult<List<SignOnExam>>(signedOff);
+        }
+
+        public Task<List<Lab>> GetAllLabs()
+        {
+            return Task.FromResult<List<Lab>>(context.Labs.ToList());
+        }
+
+        public Task<List<Lab>> GetAllLabsForAssistant(string assistantId)
+        {
+            return Task.FromResult<List<Lab>>(context.Labs.Where(x => x.AssistantId == assistantId).ToList());
+        }
+
+        public async Task<List<User>> GetStudentsForLab(int labId)
+        {
+            Lab lab = await GetLab(labId);
+
+            List<SignOnInformation> signOnInfos = context.SignOnInformation
+                .Where(x => x.CourseId == lab.Subject.Course.CourseId && 
+                            x.Degree == lab.Subject.Degree && 
+                            x.Year == lab.Subject.Year &&
+                            x.SchoolYear.YearStart.Year == DateTime.Now.Year
+                        )
+                .ToList();
+
+            List<User> students = new List<User>();
+            foreach (SignOnInformation information in signOnInfos)
+            {
+                students.Add(information.Student);
+            }
+
+            return students;
+        }
+
+        public Task<Lab> GetLab(int labId)
+        {
+            return Task.FromResult<Lab>(context.Labs.Single(x => x.LabId == labId));
+        }
+
+        public Task<List<StudentsLabs>> GetLabPresenceForStudent(string studentId)
+        {
+            return Task.FromResult<List<StudentsLabs>>(
+                context.StudentsLabs
+                    .Where(x => x.StudentId == studentId)
+                    .ToList()
+            );
+        }
+
+        public async Task<List<ScheduledLab>> GetScheduledLabsForStudentsSubjects(string studentId)
+        {
+            List<ScheduledLab> scheduledLabs = new List<ScheduledLab>();
+
+            List<Subject> subjects = await GetAllSubjectsForStudent(studentId);
+
+            foreach (Subject subject in subjects)
+            {
+                scheduledLabs.AddRange(context.ScheduledLabs.Where(x => x.Lab.SubjectId == subject.SubjectId).ToList());
+            }
+
+            return scheduledLabs;
+        }
+
+        public Task<List<Subject>> GetAllSubjectsForStudent(string studentId)
+        {
+            List<SignOnInformation> signOnInformation = context.SignOnInformation.Where(x => x.StudentId == studentId).ToList();
+            DateTime latestYear = signOnInformation.Max(x => x.SchoolYear.YearStart);
+
+            SignOnInformation activeSignOnInfo = signOnInformation.Single(x => x.SchoolYear.YearStart == latestYear);
+
+            return Task.FromResult<List<Subject>>(
+                context.Subjects
+                        .Where(x => x.Course.CourseId == activeSignOnInfo.CourseId &&
+                                    x.Degree == activeSignOnInfo.Degree &&
+                                    x.Year == activeSignOnInfo.Year)
+                        .ToList());
         }
     }
 

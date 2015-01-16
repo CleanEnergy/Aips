@@ -294,6 +294,57 @@ namespace Aips.Controllers
             }
         }
         #endregion
+
+        #region Labs
+
+        public async Task<ActionResult> ViewLabPresence()
+        {
+            try
+            {
+                List<LabPresenceForSubjectViewModel> model = new List<LabPresenceForSubjectViewModel>();
+
+                Queries query = new Queries();
+                string studentId = query.GetUserIdByUsername(User.Identity.Name);
+
+                List<ScheduledLab> scheduledLabs = await query.GetScheduledLabsForStudentsSubjects(studentId);
+
+                List<StudentsLabs> presentList = await query.GetLabPresenceForStudent(studentId);
+
+                int presenceForSubjectSum = 0;
+                int scheduledLabsTotal = 0;
+
+                IEnumerable<IGrouping<int, ScheduledLab>> scheduledLabsBySubject = scheduledLabs.GroupBy(x => x.Lab.SubjectId);
+
+                foreach (var labGroupBySubject in scheduledLabsBySubject)
+                {
+                    int subjectId = labGroupBySubject.Key;
+                    string subjectName = query.GetSubject(subjectId).Title;
+
+                    foreach (ScheduledLab scheduledLab in labGroupBySubject)
+                    {
+                        if (presentList.Any(x => x.ScheduledLabId == scheduledLab.ScheduledLabId && x.WasPresent))
+	                    {
+		                    presenceForSubjectSum++;
+	                    }
+                        scheduledLabsTotal++;
+                    }
+
+                    model.Add(new LabPresenceForSubjectViewModel() 
+                    {
+                        SubjectName = subjectName,
+                        PresencePercent = ((float)(presenceForSubjectSum) / (float)(scheduledLabsTotal)) * 100
+                    });
+                }
+
+                return View(model);
+            }
+            catch (Exception e)
+            {
+                return Helpers.ControllerExtensions.RedirectToError(this, e);
+            }
+        }
+
+        #endregion
     }
     
 }

@@ -1,17 +1,16 @@
 ﻿@model EntityClasses.UniversityEventViewModel
 
 @{
-    ViewBag.Title = "PublishEvent";
+    ViewBag.Title = "Publish event";
 }
 
-<h2>PublishEvent</h2>
+<h2>Publish a new event</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>UniversityEventViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

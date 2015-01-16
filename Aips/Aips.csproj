@@ -42,6 +42,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -79,7 +82,8 @@
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
@@ -100,6 +104,9 @@
     <Reference Include="System.Web.Mvc, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -124,6 +131,9 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -138,6 +148,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Scripts\AssignLab.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-2.1.3.intellisense.js" />
@@ -151,15 +162,18 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MarkLabPresence.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\Scheduling.js" />
     <Content Include="Scripts\Surveys.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdministrationController.cs" />
+    <Compile Include="Controllers\AssistantController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MessagingController.cs" />
@@ -225,7 +239,6 @@
     <Content Include="Views\Error\Information.cshtml" />
     <Content Include="Views\StudentsOffice\NewSchedule.cshtml" />
     <Content Include="Views\StudentsOffice\_CourseSubjects.cshtml" />
-    <Content Include="Views\StudentsOffice\AssignSubjectToAssistant.cshtml" />
     <Content Include="Views\Student\Dashboard.cshtml" />
     <Content Include="Views\Student\SignOnExam.cshtml" />
     <Content Include="Views\Student\PreExamSignOn.cshtml" />
@@ -247,6 +260,16 @@
     <Content Include="Views\StudentsOffice\StoreExamPDFUpload.cshtml" />
     <Content Include="Views\StudentsOffice\_CoursesWithProfessors.cshtml" />
     <Content Include="Views\Student\ViewAllSubjects.cshtml" />
+    <Content Include="Views\Assistant\Dashboard.cshtml" />
+    <Content Include="Views\Assistant\AllLabs.cshtml" />
+    <Content Include="Views\StudentsOffice\ViewAllLabs.cshtml" />
+    <Content Include="Views\StudentsOffice\_Assistants.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\StudentsOffice\AssignSubjectToAssistant.cshtml" />
+    <Content Include="Views\StudentsOffice\_UnassignedAssistantSubjects.cshtml" />
+    <Content Include="Views\Assistant\MarkLabPresence.cshtml" />
+    <Content Include="Views\Student\ViewLabPresence.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

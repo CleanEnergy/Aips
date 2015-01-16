@@ -98,3 +98,13 @@ C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\System
 C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\System.Web.WebPages.Deployment.xml
 C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\System.Web.WebPages.Razor.xml
 C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\DAL.pdb
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\Antlr3.Runtime.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\System.Web.Optimization.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\WebGrease.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\Antlr3.Runtime.pdb
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\System.Web.Optimization.xml
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\Antlr3.Runtime.dll
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\System.Web.Optimization.dll
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\WebGrease.dll
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\Antlr3.Runtime.pdb
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\bin\System.Web.Optimization.xml

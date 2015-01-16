@@ -1,17 +1,16 @@
 ﻿@model EntityClasses.ExamViewModel
 
 @{
-    ViewBag.Title = "ScheduleExam";
+    ViewBag.Title = "Schedule an exam";
 }
 
-<h2>ScheduleExam</h2>
+<h2>Schedule an exam</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ExamViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">

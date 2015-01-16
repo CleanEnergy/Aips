@@ -3,7 +3,6 @@
 @{
     ViewBag.Title = "NewSchedule";
 }
-<script src="~/Scripts/Scheduling.js"></script>
 <h2>New schedule</h2>
 
 @using (Html.BeginForm()) 
@@ -33,4 +32,8 @@
             </div>
         </div>
     </div>
+}
+
+@section scripts{
+    <script src="~/Scripts/Scheduling.js"></script>
 }

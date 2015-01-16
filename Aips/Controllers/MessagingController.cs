@@ -71,7 +71,7 @@ namespace Aips.Controllers
         {
             try
             {
-                UserMessage userMessage = await MessagingFunctions.GetMessage(id);
+                UserMessage userMessage = await MessagingFunctions.GetMessage(id, true);
 
                 return View(new MessageViewModel 
                 {
@@ -79,7 +79,8 @@ namespace Aips.Controllers
                     RecepientUsername = userMessage.RecepientUsername,
                     SenderUsername = userMessage.SenderUsername,
                     SentOn = userMessage.SentOn,
-                    Subject = userMessage.Subject
+                    Subject = userMessage.Subject,
+                    Seen = userMessage.Seen
                 });
             }
             catch (Exception e)
@@ -111,6 +112,20 @@ namespace Aips.Controllers
             catch (Exception e)
             {
                 return Helpers.ControllerExtensions.RedirectToError(this, e);   
+            }
+        }
+
+        public async Task<int> GetUnreadMessageCount()
+        {
+            try
+            {
+                int unreadMessages = await MessagingFunctions.GetUnreadMessageCount(User.Identity.Name);
+
+                return unreadMessages;
+            }
+            catch (Exception e)
+            {
+                return 0;
             }
         }
     }

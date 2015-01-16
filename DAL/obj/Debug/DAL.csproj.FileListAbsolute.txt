@@ -115,3 +115,13 @@ C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\D
 C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.SignOnExamUpdate.resources
 C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.SignOnExamUpdate.resources
 C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.SignOnInformationFix.resources
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.SignOnInformationFix.resources
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.StudentsLabs.resources
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.StudentsLabsDateUpdate.resources
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.StudentsLabsDateUpdate1.resources
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.StudentsLabsDateUpdate2.resources
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.StudentsLabs.resources
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.StudentsLabsDateUpdate.resources
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.StudentsLabsDateUpdate1.resources
+C:\Users\David\SkyDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.StudentsLabsDateUpdate2.resources
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\DAL\obj\Debug\DAL.Migrations.UserMessageSeen.resources

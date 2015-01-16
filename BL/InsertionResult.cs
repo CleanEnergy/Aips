@@ -21,5 +21,15 @@ namespace BL
         {
             ValidationMessages.Add(new KeyValuePair<string,string>(property, message));
         }
+
+        public static bool operator true(ValidationResult result)
+        {
+            return result.Succeded;
+        }
+
+        public static bool operator false(ValidationResult result)
+        {
+            return result.Succeded;
+        }
     }
 }

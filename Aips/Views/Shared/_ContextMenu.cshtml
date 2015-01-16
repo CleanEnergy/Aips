@@ -13,6 +13,15 @@
     </li>
 
     <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Labs<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+            <li>
+                @Html.ActionLink("View presence", "ViewLabPresence", "Student")
+            </li>
+        </ul>
+    </li>
+    
+    <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exams<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
@@ -71,7 +80,7 @@ else if (User.IsInRole("StudentsOffice"))
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Assistants<b class="caret"></b></a>
         <ul class="dropdown-menu">
             <li>
-                @Html.ActionLink("Assign subject", "AssignSubjectToAssistant", "StudentsOffice")
+                @Html.ActionLink("Assign subject to assistant", "AssignSubjectToAssistant", "StudentsOffice")
             </li>
         </ul>
     </li>
@@ -127,5 +136,11 @@ else if (User.IsInRole("Professor"))
                 @Html.ActionLink("All exams", "AllExams", "Professor")
             </li>
         </ul>
+    </li>
+}
+else if (User.IsInRole("Assistant"))
+{
+    <li>
+        @Html.ActionLink("Labs", "AllLabs", "Assistant")
     </li>
 }

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<EntityClasses.LabViewModel>
+
+@{
+    ViewBag.Title = "All labs";
+}
+
+<h2>All labs</h2>
+
+<table class="table table-responsive table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StartTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SchoolDay)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.Subject.Title
+        </td>
+        <td>
+            @item.StartTime.ToShortTimeString()
+        </td>
+        <td>
+            @item.EndTime.ToShortTimeString()
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolDay.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Mark presence", "MarkLabPresence", new {  labId = item.LabId  }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) 
+        </td>
+    </tr>
+}
+
+</table>

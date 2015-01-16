@@ -944,14 +944,7 @@ namespace Aips.Controllers
             try
             {
                 Queries query = new Queries();
-
-                List<Subject> subjects = await query.GetUnassignedSubjectsForAssistants();
-                ViewBag.Subjects = new SelectList(subjects.OrderBy(x => x.Title), "SubjectId", "Title");
-
-                List<User> assistants = await query.GetAllAssistants();
-                assistants = assistants.OrderBy(x => x.LastName).ToList();
-                var selectList = assistants.Select(x => new { Display = x.LastName + " " + x.FirstName, Value = x.Id }).ToList();
-                ViewBag.Assistants = new SelectList(selectList, "Value", "Display");
+                ViewBag.Faculties = new SelectList(await query.GetAllFaculties(), "FacultyId", "Name");
 
                 return View();
             }
@@ -1137,6 +1130,71 @@ namespace Aips.Controllers
             Queries query = new Queries();
             ViewBag.Faculties = new SelectList(await query.GetAllFaculties(), "FacultyId", "Name");
             return View(model);
+        }
+
+        #endregion
+
+        #region Labs
+
+        public async Task<ActionResult> ViewAllLabs()
+        {
+            try
+            {
+                List<LabViewModel> model = new List<LabViewModel>();
+
+                Queries query = new Queries();
+                List<Lab> allLabs = await query.GetAllLabs();
+
+                allLabs.ForEach((lab) => 
+                {
+                    model.Add(new LabViewModel() 
+                    {
+                        LabId = lab.LabId,
+                        StartTime = lab.ScheduledClassroom.ScheduleStart,
+                        EndTime = lab.ScheduledClassroom.ScheduleEnd,
+                        Subject = lab.Subject,
+                        Assistant = lab.Assistant
+                    });
+                });
+
+                return View(model);
+            }
+            catch (Exception e)
+            {
+                return Helpers.ControllerExtensions.RedirectToError(this, e);
+            }
+        }
+
+        public async Task<ActionResult> GetUnassignedSubjectsForAssistants()
+        {
+            try
+            {
+                Queries query = new Queries();
+                ViewBag.Subjects = await query.GetUnassignedSubjectsForAssistants();
+
+                return PartialView("_UnassignedAssistantSubjects");
+            }
+            catch (Exception e)
+            {
+                return Helpers.ControllerExtensions.RedirectToError(this, e);
+            }
+        }
+        public async Task<ActionResult> GetAssistants()
+        {
+            try
+            {
+                Queries query = new Queries();
+                List<User> assistants = await query.GetAllAssistants();
+
+                var assistantSelect = assistants.Select(x => new { Value = x.Id, Display = x.LastName + " " + x.FirstName });
+                ViewBag.Assistants = new SelectList(assistantSelect, "Value", "Display");
+
+                return PartialView("_Assistants");
+            }
+            catch (Exception e)
+            {
+                return Helpers.ControllerExtensions.RedirectToError(this, e);
+            }
         }
 
         #endregion

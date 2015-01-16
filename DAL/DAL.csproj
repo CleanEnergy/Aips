@@ -226,6 +226,26 @@
     <Compile Include="Migrations\201501101120244_SignOnInformationFix.Designer.cs">
       <DependentUpon>201501101120244_SignOnInformationFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201501111810271_StudentsLabs.cs" />
+    <Compile Include="Migrations\201501111810271_StudentsLabs.Designer.cs">
+      <DependentUpon>201501111810271_StudentsLabs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501111835061_StudentsLabsDateUpdate.cs" />
+    <Compile Include="Migrations\201501111835061_StudentsLabsDateUpdate.Designer.cs">
+      <DependentUpon>201501111835061_StudentsLabsDateUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501111840413_StudentsLabsDateUpdate1.cs" />
+    <Compile Include="Migrations\201501111840413_StudentsLabsDateUpdate1.Designer.cs">
+      <DependentUpon>201501111840413_StudentsLabsDateUpdate1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501112140424_StudentsLabsDateUpdate2.cs" />
+    <Compile Include="Migrations\201501112140424_StudentsLabsDateUpdate2.Designer.cs">
+      <DependentUpon>201501112140424_StudentsLabsDateUpdate2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201501131938011_UserMessageSeen.cs" />
+    <Compile Include="Migrations\201501131938011_UserMessageSeen.Designer.cs">
+      <DependentUpon>201501131938011_UserMessageSeen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -359,6 +379,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201501101120244_SignOnInformationFix.resx">
       <DependentUpon>201501101120244_SignOnInformationFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501111810271_StudentsLabs.resx">
+      <DependentUpon>201501111810271_StudentsLabs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501111835061_StudentsLabsDateUpdate.resx">
+      <DependentUpon>201501111835061_StudentsLabsDateUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501111840413_StudentsLabsDateUpdate1.resx">
+      <DependentUpon>201501111840413_StudentsLabsDateUpdate1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501112140424_StudentsLabsDateUpdate2.resx">
+      <DependentUpon>201501112140424_StudentsLabsDateUpdate2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201501131938011_UserMessageSeen.resx">
+      <DependentUpon>201501131938011_UserMessageSeen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

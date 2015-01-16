@@ -1,39 +1,28 @@
 ﻿@model EntityClasses.AssignSubjectToAssistantViewModel
-
 @{
-    ViewBag.Title = "AssignSubjectToAssistant";
+    ViewBag.Title = "AssignLab";
 }
 
-<h2>AssignSubjectToAssistant</h2>
+<h2>Assign subject to assistant</h2>
+<hr />
 
-@using (Html.BeginForm()) 
+@using(Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+    @Html.HiddenFor(m => m.SubjectId)
     <div class="form-horizontal">
-        <h4>AssignSubjectToAssistantViewModel</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
         <div class="form-group">
-            @Html.LabelFor(model => model.SubjectId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="control-label col-md-2">Select a faculty</label>
             <div class="col-md-10">
-                @Html.DropDownListFor(model => model.SubjectId, (SelectList)ViewBag.Subjects)
-                @Html.ValidationMessageFor(model => model.SubjectId, "", new { @class = "text-danger" })
+                @Html.DropDownList("Faculties", (SelectList)ViewBag.Faculties, "-- Select a faculty --", new { onchange = "getFacultyCourses()" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.AssistantId, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.AssistantId, (SelectList)ViewBag.Assistants)
-                @Html.ValidationMessageFor(model => model.AssistantId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <div id="facultyCourses"></div>
+        <div id="courseSubjects"></div>
+        <div id="assistants"></div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
     </div>
 }
+<script src="~/Scripts/AssignLab.js"></script>

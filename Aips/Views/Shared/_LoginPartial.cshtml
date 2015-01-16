@@ -7,7 +7,16 @@
 
         <ul class="nav navbar-nav navbar-right">
             <li>
-                @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Manage", "Account", routeValues: null, htmlAttributes: new { title = "Manage" })
+                @{
+                    MvcHtmlString unreadMessageCountHtml = Html.Action("GetUnreadMessageCount", "Messaging");
+                    string messageCountDisplay = string.Empty;
+                    
+                    if (int.Parse(unreadMessageCountHtml.ToHtmlString()) != 0)
+                    {
+                        messageCountDisplay = unreadMessageCountHtml.ToHtmlString();
+                    }
+                }
+                <a href="/Account/Manage" title="Manage">Hello @User.Identity.GetUserName()!   <span class="badge">@messageCountDisplay</span></a>
             </li>
             <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
 	        @if(User.IsInRole("StudentsOffice"))

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<EntityClasses.LabPresenceForSubjectViewModel>
+
+@{
+    ViewBag.Title = "Lab presence";
+}
+
+<h2>Lab presence</h2>
+
+<table class="table table-hover table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SubjectName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PresencePercent)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SubjectName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PresencePercent) %
+        </td>
+    </tr>
+}
+
+</table>

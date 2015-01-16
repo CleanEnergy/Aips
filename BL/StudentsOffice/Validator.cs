@@ -259,12 +259,13 @@ namespace BL.StudentsOffice
         {
             ValidationResult result = new ValidationResult();
 
-            if (context.Subjects.ToList().Count == 0)
+            List<Subject> subjects = context.Subjects.ToList();
+            if (subjects.Count == 0)
             {
                 result.AddError("", "Cannot assign subject, because no subjects exist.");
             }
 
-            if (context.Subjects.ToList().Count == context.ProfessorsSubjects.ToList().Count)
+            if (subjects.Count == context.ProfessorsSubjects.ToList().Count)
             {
                 result.AddError("", "Cannot assign subject, because all subjects are already assigned.");
             }
@@ -272,5 +273,30 @@ namespace BL.StudentsOffice
             return result;
         }
 
+
+        public Task<ValidationResult> CanAssignLab()
+        {
+            ValidationResult result = new ValidationResult();
+
+            List<Subject> subjects = context.Subjects.ToList();
+            if (subjects.Count == 0)
+            {
+                result.AddError("", "Cannot assign lab, because no subjects exist.");
+            }
+            if (subjects.Count == context.AssistantsSubjects.ToList().Count)
+            {
+                result.AddError("", "Cannot assign lab, because all labs are already assigned.");
+            }
+
+            return Task.FromResult<ValidationResult>(result);
+        }
+
+        public Task<ValidationResult> AssignLab(string assistantId, int subjectId)
+        {
+            ValidationResult result = new ValidationResult();
+
+
+            return Task.FromResult<ValidationResult>(result);
+        }
     }
 }

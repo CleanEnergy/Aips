@@ -1,0 +1,27 @@
+﻿@model EntityClasses.AssignSubjectToAssistantViewModel
+
+<div class="form-group">
+    <label class="col-md-2 control-label">Select a subject</label>
+    <div class="col-md-10">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (EntityClasses.Subject subject in ViewBag.Subjects)
+                {
+                    <tr>
+                        <td>@subject.Title</td>
+                        <td>
+                            <input type="radio" name="subject" value="@subject.SubjectId" onchange="setSelectedSubject(this)" />
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

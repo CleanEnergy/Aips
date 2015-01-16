@@ -1,0 +1,13 @@
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\EntityClasses.dll.config
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\EntityClasses.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\EntityClasses.pdb
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\EntityFramework.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\EntityFramework.xml
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\obj\Release\EntityClasses.dll
+C:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\EntityClasses\obj\Release\EntityClasses.pdb

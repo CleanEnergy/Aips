@@ -708,5 +708,19 @@ namespace BL.StudentsOffice
 
             return validation;
         }
+
+        public async Task<ValidationResult> AssignLab(string assistantId, int subjectId)
+        {
+            ValidationResult validation = await validator.AssignLab(assistantId, subjectId);
+            if (validation)
+            {
+                context.AssistantsSubjects.Add(new AssistantsSubjects() 
+                {
+                    AssistantId = assistantId,
+                    SubjectId = subjectId
+                });
+            }
+            return validation;
+        }
     }
 }

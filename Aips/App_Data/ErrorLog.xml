@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ExceptionWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Message>The method or operation is not implemented.</Message>
+  <OccuredOn>2015-01-11T22:54:20.0483427+01:00</OccuredOn>
+  <StackTrace>   at BL.Queries.GetLabPresenceForStudent(String studentId) in c:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\BL\Queries.cs:line 632
+   at Aips.Controllers.StudentController.&lt;ViewLabPresence&gt;d__53.MoveNext() in c:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\Controllers\StudentController.cs:line 308</StackTrace>
+  <UserName>giroud</UserName>
+  <ExceptionType>NotImplementedException</ExceptionType>
+  <Stamp>3dcc4776-b463-4e47-91e2-0730fb11de73</Stamp>
+  <InnerException>No inner exception</InnerException>
+</ExceptionWrapper><?xml version="1.0"?>
+<ExceptionWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Message>Sequence contains more than one element</Message>
+  <OccuredOn>2015-01-11T23:45:36.8112605+01:00</OccuredOn>
+  <StackTrace>   at BL.Assistant.Functions.&lt;MarkLabPresence&gt;d__6.MoveNext() in c:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\BL\Assistant\Functions.cs:line 60
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+   at Aips.Controllers.AssistantController.&lt;MarkLabPresence&gt;d__11.MoveNext() in c:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\Controllers\AssistantController.cs:line 89</StackTrace>
+  <UserName>alexis</UserName>
+  <ExceptionType>InvalidOperationException</ExceptionType>
+  <Stamp>9c21c184-8f87-424b-952a-4cbf86a1ec75</Stamp>
+  <InnerException>No inner exception</InnerException>
+</ExceptionWrapper><?xml version="1.0"?>
+<ExceptionWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Message>Operation is not valid due to the current state of the object.</Message>
+  <OccuredOn>2015-01-13T22:30:28.1326653+01:00</OccuredOn>
+  <StackTrace>   at Aips.Controllers.StudentsOfficeController.GetFacultyCoursesCopy(Int32 facultyId) in c:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\Controllers\StudentsOfficeController.cs:line 401</StackTrace>
+  <UserName>janez</UserName>
+  <ExceptionType>WebException</ExceptionType>
+  <Stamp>283c4f1d-1480-48a1-8a9c-494ddedd07ad</Stamp>
+  <InnerException>No inner exception</InnerException>
+</ExceptionWrapper><?xml version="1.0"?>
+<ExceptionWrapper xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Message>Operation is not valid due to the current state of the object.</Message>
+  <OccuredOn>2015-01-13T22:30:38.5517267+01:00</OccuredOn>
+  <StackTrace>   at Aips.Controllers.StudentsOfficeController.GetFacultyCoursesCopy(Int32 facultyId) in c:\Users\DavidMedion\OneDrive\Documents\FERI\2. Letnik\OAV\Vaja04\Aips\Aips\Controllers\StudentsOfficeController.cs:line 401</StackTrace>
+  <UserName>janez</UserName>
+  <ExceptionType>WebException</ExceptionType>
+  <Stamp>6422328e-f778-4a01-9cb9-65267c829596</Stamp>
+  <InnerException>No inner exception</InnerException>
+</ExceptionWrapper>

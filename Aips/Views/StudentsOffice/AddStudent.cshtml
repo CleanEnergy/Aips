@@ -1,17 +1,16 @@
 ﻿@model EntityClasses.CreateStudentViewModel
 
 @{
-    ViewBag.Title = "AddStudent";
+    ViewBag.Title = "Add a student";
 }
 
-<h2>AddStudent</h2>
+<h2>Add a student</h2>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>CreateStudentViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -79,14 +78,14 @@
         </div>
 
         <div class="form-group">
-            <h3>Faculties</h3>
+            <label class="control-label col-md-2">Select a faculty</label>
             <div class="col-md-10">
                 @Html.DropDownList("Faculties", (SelectList)ViewBag.Faculties, "-- Select a faculty --", new { onchange = "getFacultyCourses()" })
             </div>
         </div>
 
-        <div>
-            <h3>Courses</h3>
+        <div id="courseWrapper" style="display:none;">
+            <label class="control-label col-md-2">Select a course</label>
             <select id="CourseId" name="CourseId"></select>
         </div>
 
@@ -98,6 +97,7 @@
     </div>
 }
 
+@section scripts{
 <script>
 
     $('#CourseId').change(function () {
@@ -118,6 +118,7 @@
             success: function (e) {
                 for (var i = 0; i < e.List.length; i++) {
                     $('#CourseId').append('<option value="' + e.List[i].Id + '">' + e.List[i].Name + '</option>');
+                    $('#courseWrapper').slideDown();
                 }
             },
             error: function (e) {
@@ -127,3 +128,4 @@
     }
 
 </script>
+}

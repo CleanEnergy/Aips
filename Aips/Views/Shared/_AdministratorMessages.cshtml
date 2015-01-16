@@ -1,10 +1,17 @@
-﻿<table>
-    @foreach (var message in ViewBag.AdminMessages)
-    {
+﻿<div class="table-responsive">
+    <table class="table table-hover table-striped">
         <tr>
-            <td>@message.PostedOn</td>
-            <td>@message.Title</td>
-            <td>@message.Content</td>
+            <th>Title</th>
+            <th>Posted on</th>
+            <th>Content</th>
         </tr>
-    }
-</table>
+        @foreach (var message in ViewBag.AdminMessages)
+        {
+            <tr>
+                <td>@message.Title</td>
+                <td>@message.PostedOn</td>
+                <td>@message.Content</td>
+            </tr>
+        }
+    </table>
+</div>

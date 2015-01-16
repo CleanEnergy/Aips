@@ -23,6 +23,10 @@ namespace DAL
             base.OnModelCreating(modelBuilder);
         }
 
+        public DbSet<ScheduledLab> ScheduledLabs { get; set; }
+
+        public DbSet<StudentsLabs> StudentsLabs { get; set; }
+
         public DbSet<AssistantsSubjects> AssistantsSubjects { get; set; }
 
         public DbSet<ScheduledClassroom> ScheduledClassrooms { get; set; }

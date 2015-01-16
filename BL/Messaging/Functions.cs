@@ -14,17 +14,17 @@ namespace BL.Messaging
 
         public List<UserMessage> GetReceivedMessages(string userName)
         {
-            return context.UserMessages.Where(x => x.RecepientUsername == userName && !x.IsTrash).ToList();
+            return context.UserMessages.Where(x => x.RecepientUsername == userName && !x.IsTrash).OrderByDescending(x => x.SentOn).ToList();
         }
 
         public List<UserMessage> GetSentMessages(string userName)
         {
-            return context.UserMessages.Where(x => x.SenderUsername == userName && !x.IsTrash).ToList();
+            return context.UserMessages.Where(x => x.SenderUsername == userName && !x.IsTrash).OrderByDescending(x => x.SentOn).ToList();
         }
 
         public List<UserMessage> GetTrashMessages(string userName)
         {
-            return context.UserMessages.Where(x => (x.SenderUsername == userName || x.RecepientUsername == userName) && x.IsTrash == true).ToList();
+            return context.UserMessages.Where(x => (x.SenderUsername == userName || x.RecepientUsername == userName) && x.IsTrash == true).OrderByDescending(x => x.SentOn).ToList();
         }
 
         public Task SendMessage(string subject, string content, string senderUsername, string[] recepientUsernames)
@@ -65,9 +65,19 @@ namespace BL.Messaging
             return true;
         }
 
-        public Task<UserMessage> GetMessage(int id)
+        public async Task<UserMessage> GetMessage(int id, bool setSeen = false)
         {
-            return Task.FromResult<UserMessage>(context.UserMessages.Where<UserMessage>(x => x.UserMessageId == id).SingleOrDefault());
+            UserMessage message = context.UserMessages.Single(x => x.UserMessageId == id);
+
+            if (setSeen)
+            {
+                if (!message.Seen)
+                {
+                    context.UserMessages.Single(x => x.UserMessageId == id).Seen = true;
+                    await context.SaveChangesAsync();
+                }
+            }
+            return message;
         }
 
         public Task TrashMessage(int id)
@@ -82,6 +92,13 @@ namespace BL.Messaging
             context.Set<UserMessage>().Remove(context.UserMessages.Where<UserMessage>(x => x.UserMessageId == id).SingleOrDefault());
             Task.WaitAll(context.SaveChangesAsync());
             return Task.FromResult<object>(null);
+        }
+
+        public Task<int> GetUnreadMessageCount(string userName)
+        {
+            return Task.FromResult<int>(
+                context.UserMessages.Where(x => x.RecepientUsername == userName && !x.Seen).Count()    
+            );
         }
     }
 }
