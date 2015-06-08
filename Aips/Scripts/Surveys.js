@@ -280,7 +280,7 @@ function submitSurvey() {
 
         },
         error: function (e) {
-            alert('An error has ocured.');
+            alert('An error has occurred.');
         }
     });
 

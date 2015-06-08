@@ -21,7 +21,7 @@ function showSubjects() {
                 $('#coursesProfessors').html(e);
             },
             error: function (e) {
-                alert('An error has ocured retrieving the data.');
+                alert('An error has occurred retrieving the data.');
             }
         });
     }
