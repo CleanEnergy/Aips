@@ -49,7 +49,7 @@ function showTimetable() {
             }
         },
         error: function (e) {
-            alert('An error ocured retrieving the data.');
+            alert('An error occurred retrieving the data.');
         }
     });
 }

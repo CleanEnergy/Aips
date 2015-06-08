@@ -20,7 +20,7 @@ function getFacultyCourses() {
                 $('#facultyCourses').html(e);
             },
             error: function (e) {
-                alert('An error has ocured retrieving the data.');
+                alert('An error has occurred retrieving the data.');
             }
         });
     }
@@ -45,7 +45,7 @@ function showSubjects() {
                 $('#timetable-section').remove();
             },
             error: function (e) {
-                alert('An error has ocured retrieving the data.');
+                alert('An error has occurred retrieving the data.');
             }
         });
     }
@@ -63,7 +63,7 @@ function setSelectedSubject(radioBtn) {
             $('#assistants').html(e);
         },
         error: function (e) {
-            alert('An error has ocured retrieving the data.');
+            alert('An error has occurred retrieving the data.');
         }
     });
 
